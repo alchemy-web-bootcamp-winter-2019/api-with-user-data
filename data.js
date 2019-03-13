@@ -1,4 +1,4 @@
-const starships = {
+export const starship = {
 	"name": "CR90 corvette",
 	"model": "CR90 corvette",
 	"manufacturer": "Corellian Engineering Corporation",
