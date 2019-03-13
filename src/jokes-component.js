@@ -1,4 +1,4 @@
-export default function makeJokesTemplate(joke) {
+export function makeJokesTemplate(joke) {
     const html = /*html*/ `
     <li>
     <span class="favorite-heart">♥</span>
@@ -8,4 +8,22 @@ export default function makeJokesTemplate(joke) {
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+const jokesList = document.getElementById('jokes-list');
+
+export default function loadJokes(jokes) {
+    clearJokes();
+    //console.log(jokes);
+    jokes.result.forEach(joke => {
+        const dom = makeJokesTemplate(joke);
+        jokesList.appendChild(dom);
+    });
+}
+
+
+function clearJokes() {
+    while(jokesList.firstChild) {
+        jokesList.firstChild.remove();
+    }
 }
