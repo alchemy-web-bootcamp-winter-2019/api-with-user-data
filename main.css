@@ -1,0 +1,36 @@
+body {
+    background-color: #EDEEC9;
+    font-family: 'Vidaloka', serif;
+}
+
+h1 {
+    font-family: 'Vidaloka', serif;
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: .2em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    font-family: 'Courgette', cursive;
+    font-size: 1.5em;
+    background-color: #98C9A3;
+    border: 2px #7DD877 solid;
+    border-radius: 3px;
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.favorite-heart {
+    color: #ff99fd;
+}
