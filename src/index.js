@@ -1,5 +1,6 @@
 import { starships } from '../data.js';
 import loadStarships from './starships/starship-components.js';
+import { writeQuery, readQuery } from './starships/query-component.js';
 const query = encodeURIComponent('death');
 const page = 1;
 

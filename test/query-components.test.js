@@ -1,19 +1,9 @@
+import { writeQuery, readQuery } from '../src/starships/query-component.js';
 const test = QUnit.test;
 QUnit.module('read and write query options');
 
-function writeQuery(searchOptions) {
-    if(!searchOptions.term) {
-        return '';
-    }
 
-    const searchParams = new URLSearchParams();
-    searchParams.set('searchTerm', searchOptions.term);
-
-    return '?' + searchParams.toString();
-
-}
-
-test('read and write query options', assert => {
+test('write query options', assert => {
     //arrange
     const searchOptions = {
         term: 'death'
@@ -24,5 +14,17 @@ test('read and write query options', assert => {
     //assert
     assert.equal(result, expected);
 });
+
+test('reads query options', assert => {
+    //arrange
+    const query = '?searchTerm=death';
+    //act
+    const result = readQuery(query);
+    const expected = {
+        term: 'death'
+    }
+    //assert
+    assert.deepEqual(result, expected);
+})
 
 
