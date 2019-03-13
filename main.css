@@ -1,0 +1,20 @@
+ul {
+    border: 1px solid black;
+    list-style-type: none;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    border: 1px solid red;
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+* {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: rgb(3, 184, 3)
+}
