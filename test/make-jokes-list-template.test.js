@@ -6,8 +6,12 @@ QUnit.module('making template for list of jokes');
 test('make jokes list template', assert => {
     // arrange
     const joke = {
-        id: 'atfmenvtsaatnvplw_lpla',
-        value: 'For undercover police work, Chuck Norris pins his badge underneath his shirt, directly into his chest.'
+        result: [
+            {
+                id: 'atfmenvtsaatnvplw_lpla',
+                value: 'For undercover police work, Chuck Norris pins his badge underneath his shirt, directly into his chest.'
+            }
+        ]
     };
 
     // act

@@ -9,3 +9,20 @@ export function makeJokesTemplate(joke) {
     template.innerHTML = html;
     return template.content;
 }
+
+const jokesList = document.getElementById('jokes-list');
+
+export default function loadJokes(jokes) {
+    clearJokesList();
+    
+    jokes.result.forEach(joke => {
+        const dom = makeJokesTemplate(joke);
+        jokesList.appendChild(dom);
+    });
+}
+
+function clearJokesList() {
+    while(jokesList.firstChild) {
+        jokesList.firstChild.remove();
+    }
+}
