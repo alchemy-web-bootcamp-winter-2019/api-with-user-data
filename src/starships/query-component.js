@@ -4,15 +4,15 @@ export function writeQuery(existingQuery, searchTerm) {
     }
 
     const searchParams = new URLSearchParams();
-    searchParams.set('searchTerm', searchTerm);
+    searchParams.set('search', searchTerm);
 
-    return '?' + searchParams.toString();
+    return searchParams.toString();
 
 }
 
 export function readQuery(query) {
     const searchParams = new URLSearchParams(query);
-    const searchTerm = searchParams.get('searchTerm');
+    const searchTerm = searchParams.get('search');
    const searchOptions = {
        term: searchTerm || ''
    }

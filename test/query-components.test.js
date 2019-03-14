@@ -8,7 +8,7 @@ test('write search to empty query', assert => {
     const existingQuery = '';
     const searchTerm = 'death';
     //act
-    const expected = 'searchTerm=death';
+    const expected = 'search=death';
     const result = writeQuery(existingQuery, searchTerm);
     //assert
     assert.equal(result, expected);
@@ -20,7 +20,7 @@ test('write search to empty query', assert => {
 
 test('reads query options', assert => {
     //arrange
-    const query = '?searchTerm=death';
+    const query = 'search=death';
     //act
     const result = readQuery(query);
     const expected = {
