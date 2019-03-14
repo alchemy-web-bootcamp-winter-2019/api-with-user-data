@@ -24,7 +24,7 @@ test('make user profile', assert => {
     const result = makeProfile(user);
     const expected = /*html*/
     `<div class="profile">
-        <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
+        <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg" id="avatar">
         <span>Leslie Shea</span>
         <button>Sign Out</button>
     </div>`;
