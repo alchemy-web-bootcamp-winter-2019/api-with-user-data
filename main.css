@@ -11,7 +11,7 @@ ul {
     align-items: center;
 }
 
-li {
+.joke-card {
     background-color: #98C983;
     border: 2px solid #7DD877;
     border-radius: 3px;
