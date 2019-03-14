@@ -19,8 +19,10 @@ test('profile template will match html', assert => {
     const expected = /*html*/ `
     <div id="profile">
     <img src="/assets/chuck-avatar.png" id="avatar">
-    <span>Emily Baier</span>
-    <button>sign out</button>
+        <div id="user-info">
+        <span>${userInfo.displayName}</span>
+        <button>sign out</button>
+        </div>
     </div>
     `;
     //assert

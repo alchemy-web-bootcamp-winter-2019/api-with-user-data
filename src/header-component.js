@@ -15,12 +15,14 @@ export function makeHeader() {
 }
 
 export function makeProfile(userInfo) {
-    const avatar = userInfo.photoURL || '../assets/banana-icon.jpg';
+    const avatar = userInfo.photoURL || '../assets/chuck-avatar.jpg';
     const html = /*html*/ `
     <div id="profile">
     <img src="${avatar}" id="avatar">
-    <span>${userInfo.displayName}</span>
-    <button>sign out</button>
+        <div id="user-info">
+        <span>${userInfo.displayName}</span>
+        <button>sign out</button>
+        </div>
     </div>
     `;
     const template = document.createElement('template');
