@@ -20,16 +20,45 @@ export default function loadJokes(jokes) {
     jokes.forEach(joke => {
         const dom = makeJokesTemplate(joke);
         const favoriteHeart = dom.querySelector('.favorite-heart');
-        favoriteHeart.addEventListener('click', () => {
-            const userId = auth.currentUser.uid;
-            const userFavoritesRef = favoritesByUserRef.child(userId);
-            const userFavoriteJokeRef = userFavoritesRef.child(joke.id);
-            userFavoriteJokeRef.set({
-                id: joke.id,
-                value: joke.value
+        
+        const userId = auth.currentUser.uid;
+        const userFavoritesRef = favoritesByUserRef.child(userId);
+        const userFavoriteJokeRef = userFavoritesRef.child(joke.id);
+        userFavoriteJokeRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
+
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteHeart.classList.add('favorite');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteHeart.classList.remove('favorite');
+                }
+
+                favoriteHeart.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteJokeRef.remove();
+                        removeFavorite();
+                    }
+                    else {
+                        userFavoriteJokeRef.set({
+                            id: joke.id,
+                            value: joke.value
+                        });
+                        addFavorite();
+                    }
+                });
             });
-            
-        });
         jokesList.appendChild(dom);
     });
 }
