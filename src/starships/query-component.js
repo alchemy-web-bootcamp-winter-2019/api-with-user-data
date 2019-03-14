@@ -2,20 +2,18 @@ export function writeQuery(existingQuery, searchTerm) {
     if(!searchTerm) {
         return '';
     }
-
-    const searchParams = new URLSearchParams();
+    const searchParams = new URLSearchParams(existingQuery);
     searchParams.set('search', searchTerm);
-
-    return searchParams.toString();
+    return '?' + searchParams.toString();
 
 }
 
 export function readQuery(query) {
     const searchParams = new URLSearchParams(query);
     const searchTerm = searchParams.get('search');
-   const searchOptions = {
+   const queryOptions = {
        term: searchTerm || ''
    }
 
-   return searchOptions;
+   return queryOptions;
 }

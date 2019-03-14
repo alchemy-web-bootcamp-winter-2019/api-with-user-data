@@ -1,6 +1,5 @@
 export function makeSearchUrl(searchOptions) {
     const query = encodeURIComponent(searchOptions.term);
-    console.log(searchOptions);
     if(!query) {
         return '';
     }

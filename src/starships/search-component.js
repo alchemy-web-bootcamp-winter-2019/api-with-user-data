@@ -7,7 +7,6 @@ export default function loadSearch(callback) {
         const formData = new FormData(searchForm);
 
         const searchTerm = formData.get('starship');
-        console.log(searchTerm);
         if(searchTerm.trim() === '') {
             return;
         }
