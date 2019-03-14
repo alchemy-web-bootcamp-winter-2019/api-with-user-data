@@ -5,6 +5,9 @@ import { readFromQuery } from './query-component.js';
 import makeUrl from './make-url.js';
 import loadPaging from './paging-component.js';
 import { pageArray } from './paging-component.js';
+import loadHeader from './header-component.js';
+
+loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
 
