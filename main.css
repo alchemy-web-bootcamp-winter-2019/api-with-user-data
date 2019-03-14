@@ -24,8 +24,17 @@ ul {
     height: 200px;
     padding: 10px;
     margin: 5px;
+    position: relative;
 }
 
 .favorite-heart {
-    color: #ff99fd;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.favorite {
+    color: #d82b87;
 }

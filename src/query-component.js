@@ -17,6 +17,5 @@ export function readFromQuery(query) {
         query: searchParams.get('query'),
         page: parseInt(searchParams.get('page')) || 1
     };
-    console.log(queryOptions);
     return queryOptions;
 }
