@@ -5,13 +5,13 @@ QUnit.module('make URL');
 
 test('includes search term in URL', assert => {
     //arrange
-    const searchOptions = {
-        term: 'death'
+    const queryOptions = {
+        searchInput: 'death'
     };
 
-    const expected = `https://swapi.co/api/starships/?search=death`;
+    const expected = 'https://swapi.co/api/starships/?search=death';
     //act
-    const result = makeSearchUrl(searchOptions);
+    const result = makeSearchUrl(queryOptions);
 
     //assert
     assert.equal(result, expected);
@@ -19,13 +19,13 @@ test('includes search term in URL', assert => {
 
 test('search returns empty url if no search term', assert => {
       //arrange
-      const searchOptions = {
+      const queryOptions = {
         term: ''
     };
 
     const expected = '';
     //act
-    const result = makeSearchUrl(searchOptions);
+    const result = makeSearchUrl(queryOptions);
 
     //assert
     assert.equal(result, expected);

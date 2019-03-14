@@ -1,20 +1,23 @@
-const searchForm= document.getElementById('search-form');
+import { writeQuery } from './query-component.js';
 
-export default function loadSearch(callback) {
-    searchForm.addEventListener('submit', event => {
+const searchForm= document.getElementById('search-form');
+const searchInput = document.getElementById('starship');
+
+searchForm.addEventListener('submit', event => {
         event.preventDefault();
 
         const formData = new FormData(searchForm);
 
-        const searchTerm = formData.get('starship');
-        if(searchTerm.trim() === '') {
-            return;
-        }
+        const searchInput = formData.get('starship');
 
-        const searchOptions = {
-            term: searchTerm
-        }
+        const existingQuery = window.location.hash.slice(1);
 
-        callback(searchOptions);
+        const newQuery = writeQuery(existingQuery, searchInput);
+
+        window.location.hash = newQuery;
     });
+
+
+export function updateSearchInput(searchTerm) {
+    searchInput.value = searchTerm;
 }
