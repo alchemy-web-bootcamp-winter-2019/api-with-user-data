@@ -10,7 +10,7 @@ test('make url with query and page number', assert => {
     };
 
     const result = makeUrl(queryOptions);
-    const expected = 'https://api.chucknorris.io/jokes/search?query=roundhouse&page=3';
+    const expected = 'https://api.chucknorris.io/jokes/search?query=roundhouse';
 
     assert.equal(result, expected);
 });
