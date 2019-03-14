@@ -32,7 +32,6 @@ function loadQuery() {
             /* eslint-disable-next-line */
             console.error('Fetch error:', err);
         });
-    
 }
 
 

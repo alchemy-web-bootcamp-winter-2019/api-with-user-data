@@ -16,7 +16,7 @@ const jokesList = document.getElementById('jokes-list');
 
 export default function loadJokes(jokes) {
     clearJokes();
-    //console.log(jokes);
+
     jokes.forEach(joke => {
         const dom = makeJokesTemplate(joke);
         const favoriteHeart = dom.querySelector('.favorite-heart');
