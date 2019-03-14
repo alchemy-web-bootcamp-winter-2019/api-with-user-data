@@ -1,4 +1,4 @@
-import { makeSearchUrl } from '../src/starship-api.js';
+import { makeSearchUrl } from '../src/make-search-url.js';
 const test = QUnit.test;
 QUnit.module('make URL');
 
@@ -6,7 +6,7 @@ QUnit.module('make URL');
 test('includes search term in URL', assert => {
     //arrange
     const searchOptions = {
-        searchTerm: 'death'
+        term: 'death'
     };
 
     const expected = `https://swapi.co/api/starships/?search=death`;

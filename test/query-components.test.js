@@ -3,14 +3,13 @@ const test = QUnit.test;
 QUnit.module('read and write query options');
 
 
-test('write query options', assert => {
+test('write search to empty query', assert => {
     //arrange
-    const searchOptions = {
-        term: 'death'
-    };
+    const existingQuery = '';
+    const searchTerm = 'death';
     //act
-    const expected = '?searchTerm=death';
-    const result = writeQuery(searchOptions);
+    const expected = 'searchTerm=death';
+    const result = writeQuery(existingQuery, searchTerm);
     //assert
     assert.equal(result, expected);
 });
