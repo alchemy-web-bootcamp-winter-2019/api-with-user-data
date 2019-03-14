@@ -1,5 +1,5 @@
 
-import loadStarships, { updateStarships } from './starships/starship-components.js';
+import  updateStarships from './starships/starship-components.js';
 import { writeQuery, readQuery } from './starships/query-component.js';
 import './starships/search-component.js';
 import { updateSearchInput } from './starships/search-component.js';

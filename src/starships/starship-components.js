@@ -16,13 +16,7 @@ export function makeListTemplate(starship) {
 
 const starshipListNode = document.getElementById('starship-list');
 
-let selectCallback = null;
-
-export default  function loadStarships(callback) {
-    selectCallback = callback;
-}
-
-export function updateStarships(starships) {
+export default function updateStarships(starships) {
    while(starshipListNode.firstChild) {
        starshipListNode.firstChild.remove();
    }
@@ -32,15 +26,43 @@ export function updateStarships(starships) {
        const userId = auth.currentUser.uid;
        const userFavoritesRef = favoritesByUserRef.child(userId);
        const userFavoriteStarshipRef = userFavoritesRef.child(starship.name);
-       favoriteSymbol.addEventListener('click', () => {
-           userFavoriteStarshipRef.set({
-             name: starship.name,
-             model: starship.model, 
-             manufacturer: starship.manufacturer,
-             cost_in_credits: starship.cost_in_credits 
-           });
-       });
-    
+       let isFavorite = false;
+       userFavoriteStarshipRef.once('value')
+        .then(snapshot => {
+            const value = snapshot.val();
+            if(value) {
+                addFavorite();
+            }
+            else {
+                removeFavorite();
+            }
+            function addFavorite() {
+                isFavorite = true;
+                favoriteSymbol.classList.add('favorite');
+            }
+            function removeFavorite() {
+                isFavorite = false;
+                favoriteSymbol.classList.remove('favorite');
+
+            }
+            
+            favoriteSymbol.addEventListener('click', () => {
+                if(isFavorite) {
+                    userFavoriteStarshipRef.remove();
+                    removeFavorite();
+                }
+                else {
+                    userFavoriteStarshipRef.set({
+                        name: starship.name,
+                        model: starship.model, 
+                        manufacturer: starship.manufacturer,
+                        cost_in_credits: starship.cost_in_credits 
+                    });
+                    addFavorite();
+                }
+            });
+            
+        })
        starshipListNode.appendChild(dom);
 
    });
