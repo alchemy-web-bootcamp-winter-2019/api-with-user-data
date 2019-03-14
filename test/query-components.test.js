@@ -5,11 +5,12 @@ QUnit.module('read and write query options');
 
 test('write search to empty query', assert => {
     //arrange
-    const existingQuery = '';
-    const searchTerm = 'death';
+    const searchOptions = {
+        term: 'death'
+    }
     //act
-    const expected = 'searchTerm=death';
-    const result = writeQuery(existingQuery, searchTerm);
+    const expected = '?searchTerm=death';
+    const result = writeQuery(searchOptions);
     //assert
     assert.equal(result, expected);
 });
