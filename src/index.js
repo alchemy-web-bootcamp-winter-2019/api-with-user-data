@@ -6,7 +6,10 @@ import makeUrl from './make-url.js';
 import loadPaging from './paging-component.js';
 import { pageArray } from './paging-component.js';
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', loadQuery);
+
+function loadQuery() {
+    
     const query = window.location.hash.slice(1);
     const queryOptions = readFromQuery(query);
     updateQueryInput(queryOptions.query);
@@ -18,6 +21,7 @@ window.addEventListener('hashchange', () => {
         .then(jokes => {
             loadPaging(jokes.result.length, pagingOptions => {
                 const pagedJokes = pageArray(jokes.result, pagingOptions);
+                
                 loadJokes(pagedJokes);
             });
         })
@@ -26,6 +30,6 @@ window.addEventListener('hashchange', () => {
             console.error('Fetch error:', err);
         });
     
-});
+}
 
 
