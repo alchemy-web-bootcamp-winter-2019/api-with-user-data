@@ -13,7 +13,14 @@ export function makeListTemplate(starship) {
 }
 
 const starshipListNode = document.getElementById('starship-list');
-export default function loadStarships(starships) {
+
+let selectCallback = null;
+
+export default  function loadStarships(callback) {
+    selectCallback = callback;
+}
+
+export function updateStarships(starships) {
    while(starshipListNode.firstChild) {
        starshipListNode.firstChild.remove();
    }
