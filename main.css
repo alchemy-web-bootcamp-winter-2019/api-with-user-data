@@ -7,6 +7,7 @@ ul {
 }
 
 li {
+    position: relative;
     border: 1px solid red;
     margin: 5px;
     text-align: center;
@@ -18,4 +19,13 @@ li {
     color: rgb(3, 184, 3);
     background-color: black;
 }
+
+.favorite-symbol {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 15px;
+    user-select: none;
+    font-size: 40px;
+} 
 

@@ -31,6 +31,7 @@ test('make starship template', assert => {
     const expected = /*html*/
     `<li>
     <h2>Name: CR90 corvette</h2>
+    <span class="favorite-symbol">⊛</span>
     <h3>Model: CR90 corvette</h3>
     <h3>Manufacturer: Corellian Engineering Corporation</h3>
     <h3>Cost: 3500000</h3>
