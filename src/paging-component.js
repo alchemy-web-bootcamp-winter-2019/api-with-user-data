@@ -17,15 +17,13 @@ export default function loadPaging(totalCount, callback) {
     nextButton.addEventListener('click', () => {
         currentPageNumber++;
         updatePaging();
-        updatePageInUrl();
-        console.log(currentPageNumber);
+        // updatePageInUrl();
     });
 
     previousButton.addEventListener('click', () => {
         currentPageNumber--;
         updatePaging();
-        updatePageInUrl();
-        console.log(currentPageNumber);
+        // updatePageInUrl();
     });
 
     function updatePaging() {
@@ -40,11 +38,11 @@ export default function loadPaging(totalCount, callback) {
         callback(pagingOptions);
     }
 
-    function updatePageInUrl() {
-        const existingQuery = window.location.hash.slice(1);
-        const newQuery = writePageToQuery(existingQuery, currentPageNumber);
-        window.location.hash = newQuery;
-    }
+    // function updatePageInUrl() {
+    //     const existingQuery = window.location.hash.slice(1);
+    //     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
+    //     window.location.hash = newQuery;
+    // }
 }
 
 export function pageArray(array, pagingOptions) {
