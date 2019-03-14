@@ -1,3 +1,5 @@
+import { writePageToQuery } from './query-component.js';
+
 const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
 const currentPage = document.getElementById('current-page');
@@ -8,18 +10,22 @@ const PER_PAGE = 12;
 export default function loadPaging(totalCount, callback) {
     const totalPageCount = Math.ceil(totalCount / PER_PAGE);
     totalPages.textContent = totalPageCount;
-
+    
     let currentPageNumber = 1;
     updatePaging();
 
     nextButton.addEventListener('click', () => {
         currentPageNumber++;
         updatePaging();
+        updatePageInUrl();
+        console.log(currentPageNumber);
     });
 
     previousButton.addEventListener('click', () => {
         currentPageNumber--;
         updatePaging();
+        updatePageInUrl();
+        console.log(currentPageNumber);
     });
 
     function updatePaging() {
@@ -29,9 +35,15 @@ export default function loadPaging(totalCount, callback) {
             perPage: PER_PAGE
         };
 
-        callback(pagingOptions);
         nextButton.disabled = currentPageNumber === totalPageCount;
         previousButton.disabled = currentPageNumber === 1;
+        callback(pagingOptions);
+    }
+
+    function updatePageInUrl() {
+        const existingQuery = window.location.hash.slice(1);
+        const newQuery = writePageToQuery(existingQuery, currentPageNumber);
+        window.location.hash = newQuery;
     }
 }
 
