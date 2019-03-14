@@ -15,7 +15,7 @@ export function makeHeader() {
 export function makeProfile(user) {
     const html = /*html*/
     `<div class="profile">
-        <img src="${user.photoUrl}">
+        <img src="${user.photoUrl}" id="avatar">
         <span>${user.displayName}</span>
         <button>Sign Out</button>
     </div>`;
