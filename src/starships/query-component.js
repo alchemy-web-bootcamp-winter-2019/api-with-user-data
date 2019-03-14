@@ -6,7 +6,7 @@ export function writeQuery(existingQuery, searchTerm) {
     const searchParams = new URLSearchParams();
     searchParams.set('searchTerm', searchTerm);
 
-    return searchParams.toString();
+    return '?' + searchParams.toString();
 
 }
 

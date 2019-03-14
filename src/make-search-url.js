@@ -1,8 +1,9 @@
 export function makeSearchUrl(searchOptions) {
-    const searchTerm = searchOptions.term;
-    if(!searchTerm) {
+    const query = encodeURIComponent(searchOptions.term);
+    console.log(searchOptions);
+    if(!query) {
         return '';
     }
-    const url = `https://swapi.co/api/starships/?search=${searchTerm}`;
+    const url = `https://swapi.co/api/starships/?search=${query}`;
     return url;
 }
