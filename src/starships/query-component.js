@@ -1,12 +1,12 @@
-export function writeQuery(searchOptions) {
-    if(!searchOptions.term) {
+export function writeQuery(existingQuery, searchTerm) {
+    if(!searchTerm) {
         return '';
     }
 
     const searchParams = new URLSearchParams();
-    searchParams.set('searchTerm', searchOptions.term);
+    searchParams.set('searchTerm', searchTerm);
 
-    return '?' + searchParams.toString();
+    return searchParams.toString();
 
 }
 
