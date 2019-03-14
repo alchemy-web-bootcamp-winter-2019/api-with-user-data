@@ -1,5 +1,6 @@
 // import jokes from '../data/sample-data.js';
 import loadJokes from './jokes-component.js';
+import './search-component.js';
 
 
 const query = encodeURIComponent('pain');
