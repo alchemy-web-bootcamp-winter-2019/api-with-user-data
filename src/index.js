@@ -6,7 +6,6 @@ const page = 1;
 
 const URL = `https://swapi.co/api/starships/?search=${query}`;
 
-console.log(URL);
 
 fetch(URL)
 .then(response => response.json())
