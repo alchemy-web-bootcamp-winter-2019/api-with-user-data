@@ -22,15 +22,19 @@
             <button>Search!</button>
         </form>
 
-        <section id="paging section">
-            <button id="previous-button">&lt;</button>
-            Page <span id="current-page"></span> of <span id="total-pages"></span>
-            <button id="next-button">&gt;</button>
-        </section>
+        <p>Search for a joke by typing a word in the search bar.</p>
 
-        <ul id="jokes-list">
+        <div id="jokes-section" class="hidden">
+            <section id="paging section">
+                <button id="previous-button">&lt;</button>
+                Page <span id="current-page"></span> of <span id="total-pages"></span>
+                <button id="next-button">&gt;</button>
+            </section>
 
-        </ul>
+            <ul id="jokes-list">
+
+            </ul>
+        </div>
     </main>
     <script type="module" src="./src/index.js"></script>
 </body>

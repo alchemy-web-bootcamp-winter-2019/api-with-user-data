@@ -2,14 +2,23 @@
     width: 100px;
 }
 
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center; 
+}
+
 h1 {
     font-family: 'Vidaloka', serif;
     font-size: 2em;
     letter-spacing: 0.2em;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
 }
 
-#header-container {
-    display: flex;
+#avatar {
+    width: 75px;
+    border-radius: 50%;
+    background-color: pink;
 }
