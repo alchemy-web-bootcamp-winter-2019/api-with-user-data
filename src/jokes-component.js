@@ -15,7 +15,7 @@ const jokesList = document.getElementById('jokes-list');
 export default function loadJokes(jokes) {
     clearJokes();
     //console.log(jokes);
-    jokes.result.forEach(joke => {
+    jokes.forEach(joke => {
         const dom = makeJokesTemplate(joke);
         jokesList.appendChild(dom);
     });
