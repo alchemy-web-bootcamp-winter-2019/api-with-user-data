@@ -11,8 +11,6 @@ loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
 
-loadQuery();
-
 
 function loadQuery() {
     const query = window.location.hash.slice(1);
