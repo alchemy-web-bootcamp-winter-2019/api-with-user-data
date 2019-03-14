@@ -9,6 +9,12 @@ function writeSearchToQuery(existingQuery, userQuery) {
     return searchParams.toString();
 }
 
+function writePageToQuery(existingQuery, page) {
+    const searchParams = new URLSearchParams(existingQuery);
+    searchParams.set('page', page);
+    return searchParams.toString();
+}
+
 test('write search to empty query', assert => {
     //arrange
     const existingQuery = '';
@@ -18,6 +24,21 @@ test('write search to empty query', assert => {
     const expected = 'query=roundhouse&page=1';
 
     const query = writeSearchToQuery(existingQuery, userQuery);
+    
+    //assert
+
+    assert.equal(query, expected);
+});
+
+test('write page to existing query', assert => {
+    //arrange
+    const existingQuery = 'query=roundhouse&page=2';
+    const page = 3;
+
+    //act
+    const expected = 'query=roundhouse&page=3';
+
+    const query = writePageToQuery(existingQuery, page);
     
     //assert
 
