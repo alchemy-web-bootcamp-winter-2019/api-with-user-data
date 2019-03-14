@@ -29,10 +29,10 @@ export function updateStarships(starships) {
    starships.forEach(starship => {
        const dom = makeListTemplate(starship);
        const favoriteSymbol = dom.querySelector('.favorite-symbol');
+       const userId = auth.currentUser.uid;
+       const userFavoritesRef = favoritesByUserRef.child(userId);
+       const userFavoriteStarshipRef = userFavoritesRef.child(starship.name);
        favoriteSymbol.addEventListener('click', () => {
-           const userId = auth.currentUser.uid;
-           const userFavoritesRef = favoritesByUserRef.child(userId);
-           const userFavoriteStarshipRef = userFavoritesRef.child(starship.name);
            userFavoriteStarshipRef.set({
              name: starship.name,
              model: starship.model, 

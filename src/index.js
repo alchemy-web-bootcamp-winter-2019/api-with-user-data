@@ -4,13 +4,16 @@ import { writeQuery, readQuery } from './starships/query-component.js';
 import './starships/search-component.js';
 import { updateSearchInput } from './starships/search-component.js';
 import { makeSearchUrl } from './make-search-url.js';
+import { auth } from './firebase.js';
 const starshipListNode = document.getElementById('starship-list');
 
-let queryOptions = null;
+//let queryOptions = null;
 
 window.addEventListener('hashchange', loadQuery);
 
-loadQuery();
+auth.onAuthStateChanged(() => {
+    loadQuery();
+});
 
 function loadQuery() {
     const query = window.location.hash.slice(1);
