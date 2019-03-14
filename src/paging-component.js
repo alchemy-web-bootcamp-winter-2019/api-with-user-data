@@ -1,4 +1,4 @@
-import { writePageToQuery } from './query-component.js';
+// import { writePageToQuery } from './query-component.js';
 
 const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
