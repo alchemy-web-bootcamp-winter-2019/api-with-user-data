@@ -6,13 +6,18 @@ import makeUrl from './make-url.js';
 import loadPaging from './paging-component.js';
 import { pageArray } from './paging-component.js';
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', loadQuery);
+
+loadQuery();
+
+
+function loadQuery() {
     const query = window.location.hash.slice(1);
     const queryOptions = readFromQuery(query);
     updateQueryInput(queryOptions.query);
-
+    
     const url = makeUrl(queryOptions);
-
+    
     fetch(url)
         .then(response => response.json())
         .then(jokes => {
@@ -25,4 +30,4 @@ window.addEventListener('hashchange', () => {
             /* eslint-disable-next-line */
             console.error('Fetch error:', err);
         });
-});
+}
