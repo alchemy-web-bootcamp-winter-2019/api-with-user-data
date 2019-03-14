@@ -35,3 +35,25 @@ test('write page to existing query', assert => {
 
     assert.equal(result, expected);
 });
+
+function readFromQuery(query) {
+    const searchParams = new URLSearchParams(query);
+
+    const queryOptions = {
+        query: searchParams.get('query'),
+        page: parseInt(searchParams.get('page')) || 1
+    };
+    return queryOptions;
+}
+
+test('read query from url', assert => {
+    const query = 'query=roundhouse&page=3';
+
+    const result = readFromQuery(query);
+    const expected = {
+        query: 'roundhouse',
+        page: 3
+    };
+    
+    assert.deepEqual(result, expected);
+});
