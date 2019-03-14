@@ -1,6 +1,6 @@
 export function makeJokesTemplate(joke) {
     const html = /*html*/ `
-    <li>
+    <li class="joke-card">
     <span class="favorite-heart">♥</span>
     <p id="${joke.id}">${joke.value}</p>
     </li>

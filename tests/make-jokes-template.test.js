@@ -15,7 +15,7 @@ test('template matches literal html', assert => {
     //act
     const result = makeJokesTemplate(joke);
     const expected = /*html*/ `
-    <li>
+    <li class="joke-card">
     <span class="favorite-heart">♥</span>
     <p id="atfmenvtsaatnvplw_lpla">For undercover police work, Chuck Norris pins his badge underneath his shirt, directly into his chest.</p>
     </li>

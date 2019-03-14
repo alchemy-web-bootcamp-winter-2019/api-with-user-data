@@ -1,5 +1,3 @@
-
-// Initialize Firebase
 const config = {
     apiKey: 'AIzaSyDYyYcevvqgN_TCGkIHmB66z1kBTkI-Sq8',
     authDomain: 'chuck-norris-jokes-a4650.firebaseapp.com',
@@ -11,4 +9,6 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
-//const db = firebase.database(); 
+const db = firebase.database(); 
+export const usersRef = db.ref('users');
+export const favoritesByUserRef = db.ref('favorites-by-user');

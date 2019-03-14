@@ -12,7 +12,7 @@ test('make url with query and page number from api', assert => {
         page: 3
     };
 
-    const expected = 'https://api.chucknorris.io/jokes/search?query=roundhouse&page=3';
+    const expected = 'https://api.chucknorris.io/jokes/search?query=roundhouse';
     //act
 
     const url = makeUrl(queryOptions);
