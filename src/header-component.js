@@ -3,8 +3,10 @@ import { auth } from './firebase.js';
 export function makeHeader() {
     const html = /*html*/
     `<header>
-        <h1>Not Very Funny Chuck Norris Jokes</h1>
-        <img id="chuck-image" src="./assets/chuck.png">
+        <div id="static-header">
+            <h1>Not Very Funny Chuck Norris Jokes</h1>
+            <img id="chuck-image" src="./assets/chuck.png">
+        </div>
     </header>`;
 
     const template = document.createElement('template');
@@ -13,9 +15,10 @@ export function makeHeader() {
 }
 
 export function makeProfile(user) {
+    const avatar = user.photoUrl || '../assets/chuck-profile.png';
     const html = /*html*/
-    `<div class="profile">
-        <img src="${user.photoUrl}" id="avatar">
+    `<div id="profile">
+        <img src="${avatar}" id="avatar">
         <span>${user.displayName}</span>
         <button>Sign Out</button>
     </div>`;
@@ -25,16 +28,17 @@ export function makeProfile(user) {
     return template.content;
 }
 
+const headerContainer = document.getElementById('header-container');
+
 export default function loadHeader(options) {
-    const headerContainer = document.getElementById('header-container');
     const dom = makeHeader();
+    const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
 
     if(options && options.skipAuth) {
         return;
     }
 
-    const header = dom.querySelector('header');
     auth.onAuthStateChanged(user => {
         if(user) {  
             const userDom = makeProfile(user);
