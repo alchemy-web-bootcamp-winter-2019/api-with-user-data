@@ -8,13 +8,24 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Vidaloka" rel="stylesheet">
     <title>Not Very Funny Chuck Norris Jokes</title>
 </head>
 <body>
+<div id="header-container">
     <header>
-        <h1>Not Very Funny Chuck Norris Jokes</h1>
+    <div id="static-header">
+    <img src="assets/chuck.png" id="chuck-img">
+    <h1>Not Very Funny Chuck Norris Jokes</h1>
+    </div>
+    <div id="profile">
+    <img src="/assets/chuck-avatar.png" id="avatar">
+    <span>Emily Baier</span>
+    <button>sign out</button>
+    </div>
     </header>
+</div>
     <main>
         <form id="search-form">
         <input type="text" name="joke-search" id="joke-search">

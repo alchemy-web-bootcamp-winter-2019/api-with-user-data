@@ -6,6 +6,7 @@ import makeUrl from './make-url.js';
 import loadPaging from './paging-component.js';
 import { pageArray } from './paging-component.js';
 
+
 window.addEventListener('hashchange', loadQuery);
 
 function loadQuery() {
@@ -21,7 +22,7 @@ function loadQuery() {
         .then(jokes => {
             loadPaging(jokes.result.length, pagingOptions => {
                 const pagedJokes = pageArray(jokes.result, pagingOptions);
-                
+
                 loadJokes(pagedJokes);
             });
         })
