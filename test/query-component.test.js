@@ -18,3 +18,20 @@ test('write search to empty query', assert => {
 
     assert.equal(result, expected);
 });
+
+function writePageToQuery(existingQuery, page) {
+    const searchParams = new URLSearchParams(existingQuery);
+    searchParams.set('page', page);
+
+    return searchParams.toString();
+}
+
+test('write page to existing query', assert => {
+    const existingQuery = 'query=roundhouse&page=2';
+    const page = 3;
+
+    const result = writePageToQuery(existingQuery, page);
+    const expected = 'query=roundhouse&page=3';
+
+    assert.equal(result, expected);
+});
