@@ -15,6 +15,10 @@ test('write query options', assert => {
     assert.equal(result, expected);
 });
 
+// test('write search to existing query', assert => {
+
+// })
+
 test('reads query options', assert => {
     //arrange
     const query = '?searchTerm=death';
