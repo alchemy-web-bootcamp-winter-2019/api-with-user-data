@@ -1,19 +1,7 @@
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/query-component.js';
 const test = QUnit.test;
 
 QUnit.module('query component tests');
-
-function writeSearchToQuery(existingQuery, userQuery) {
-    const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('query', userQuery);
-    searchParams.set('page', 1);
-    return searchParams.toString();
-}
-
-function writePageToQuery(existingQuery, page) {
-    const searchParams = new URLSearchParams(existingQuery);
-    searchParams.set('page', page);
-    return searchParams.toString();
-}
 
 test('write search to empty query', assert => {
     //arrange
@@ -43,4 +31,18 @@ test('write page to existing query', assert => {
     //assert
 
     assert.equal(query, expected);
+});
+
+test('read query from url', assert => {
+    //arrange
+    const query = 'query=roundhouse&page=3';
+    const expected = {
+        query: 'roundhouse',
+        page: 3
+    };
+    //act
+    const queryOptions = readFromQuery(query);
+    //assert
+    assert.deepEqual(queryOptions, expected);
+
 });
