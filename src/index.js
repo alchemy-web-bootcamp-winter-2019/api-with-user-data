@@ -6,7 +6,7 @@ import { updateSearchInput } from './starships/search-component.js';
 import { makeSearchUrl } from './make-search-url.js';
 const starshipListNode = document.getElementById('starship-list');
 
-let searchOptions = null;
+let queryOptions = null;
 
 // loadSearch(newSearchOptions => {
 //    searchOptions = newSearchOptions;

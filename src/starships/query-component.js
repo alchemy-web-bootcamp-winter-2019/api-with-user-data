@@ -10,9 +10,8 @@ export function writeQuery(existingQuery, searchTerm) {
 
 export function readQuery(query) {
     const searchParams = new URLSearchParams(query);
-    const searchTerm = searchParams.get('search');
    const queryOptions = {
-       term: searchTerm || ''
+       searchInput: searchParams.get('search')
    }
 
    return queryOptions;

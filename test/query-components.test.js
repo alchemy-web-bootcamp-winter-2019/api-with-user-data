@@ -14,9 +14,17 @@ test('write search to empty query', assert => {
     assert.equal(result, expected);
 });
 
-// test('write search to existing query', assert => {
+test('write search to existing query', assert => {
+//arrange
+const existingQuery = '?search=star';
+const searchTerm = 'rebel';
+const expected = '?search=rebel';
+//act
+const result = writeQuery(existingQuery, searchTerm);
+//assert
+ assert.equal(result, expected);
 
-// })
+})
 
 test('reads query options', assert => {
     //arrange
@@ -24,7 +32,7 @@ test('reads query options', assert => {
     //act
     const result = readQuery(query);
     const expected = {
-        term: 'death'
+        searchInput: 'death'
     }
     //assert
     assert.deepEqual(result, expected);
