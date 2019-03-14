@@ -4,7 +4,7 @@ import loadJokes from './jokes-component.js';
 
 
 const query = encodeURIComponent('pain');
-const url = `https://api.chucknorris.io/jokes/search?query=${query}`
+const url = `https://api.chucknorris.io/jokes/search?query=${query}`;
 
 fetch(url)
     .then(response => response.json())
