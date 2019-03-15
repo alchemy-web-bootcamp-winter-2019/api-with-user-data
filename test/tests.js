@@ -5,7 +5,6 @@ import './query-component.test.js';
 import './make-url.test.js';
 import './header-component.test.js';
 import './convert-object-to-array.test.js';
-
 QUnit.done(() => {
     app.delete();
 });
