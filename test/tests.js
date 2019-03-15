@@ -1,4 +1,4 @@
-import { app } from '../firebase.firebae.js';
+import { app } from '../firebase/firebase.js';
 import './html-equal.js';
 import './create-river.test.js';
 import './url-functions.test.js';
