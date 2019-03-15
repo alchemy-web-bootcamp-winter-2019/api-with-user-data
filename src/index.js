@@ -8,7 +8,7 @@ import { makeSearchUrl } from './make-search-url.js';
 import { auth } from './firebase.js';
 const starshipListNode = document.getElementById('starship-list');
 
-//let queryOptions = null;
+let queryOptions = null;
 
 window.addEventListener('hashchange', loadQuery);
 
@@ -26,10 +26,14 @@ function loadQuery() {
         .then(starships => {
             updateStarships(starships.results);
             console.log(starships);
-            // const pagingInfo = {
-            //     page: starships.page,
-            //     totalPages: starships.total
-            // }
+            let totalPages = Math.ceil(starships.count / 10);
+            let page = queryOptions.page;
+            console.log(totalPages);
+            const pagingInfo = {
+                totalPages: totalPages,
+                page: page
+            };
+            updatePagingInfo(pagingInfo);
         })
         .catch(err => {
             /* eslint-disable-next-line*/
