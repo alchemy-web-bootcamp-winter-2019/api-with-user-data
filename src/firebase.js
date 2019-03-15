@@ -4,7 +4,8 @@ const config = {
     databaseURL: 'https://chuck-norris-jokes-a4650.firebaseio.com',
     projectId: 'chuck-norris-jokes-a4650'
 };
-firebase.initializeApp(config);
+
+export const app = firebase.initializeApp(config);
 
 
 export const auth = firebase.auth();
