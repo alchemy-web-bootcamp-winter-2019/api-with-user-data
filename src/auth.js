@@ -1,6 +1,6 @@
 import { auth, usersRef } from './firebase.js';
 
-const options = { skipAuth: true };
+//const options = { skipAuth: true };
 
 const ui = new firebaseui.auth.AuthUI(auth);
 
