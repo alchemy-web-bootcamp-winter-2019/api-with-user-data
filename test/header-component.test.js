@@ -29,6 +29,7 @@ test('make user profile', assert => {
         <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg" id="avatar">
         <span>Leslie Shea</span>
         <button>Sign Out</button>
+        <p><a href="/favorites.html">My Favorite Jokes</a></p>
     </div>`;
 
     assert.htmlEqual(result, expected);

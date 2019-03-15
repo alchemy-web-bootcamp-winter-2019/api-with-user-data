@@ -1,10 +1,19 @@
 import { auth } from './firebase.js';
 
 export function makeHeader() {
+    let headerText = null;
+
+    if(window.location.pathname === '/favorites.html') {
+        headerText = 'My Favorite Jokes';
+    }
+    else {
+        headerText = 'Not Very Funny Chuck Norris Jokes';
+    }
+
     const html = /*html*/
     `<header>
         <div id="static-header">
-            <h1>Not Very Funny Chuck Norris Jokes</h1>
+            <h1>${headerText}</h1>
             <img id="chuck-image" src="./assets/chuck.png">
         </div>
     </header>`;
@@ -15,12 +24,25 @@ export function makeHeader() {
 }
 
 export function makeProfile(user) {
+    let link = null;
+    let linkText = null;
+
+    if(window.location.pathname === '/favorites.html') {
+        link = '/';
+        linkText = 'Back to Search';
+    }
+    else {
+        link = '/favorites.html';
+        linkText = 'My Favorite Jokes';
+    }
     const avatar = user.photoUrl || '../assets/chuck-profile.png';
+
     const html = /*html*/
     `<div id="profile">
         <img src="${avatar}" id="avatar">
         <span>${user.displayName}</span>
         <button>Sign Out</button>
+        <p><a href="${link}">${linkText}</a></p>
     </div>`;
 
     const template = document.createElement('template');
