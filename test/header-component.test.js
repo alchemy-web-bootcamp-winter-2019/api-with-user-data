@@ -1,4 +1,4 @@
-import { makeHeader } from '../src/shared/header-component.js';
+import { makeHeader, makeUserProfile } from '../src/shared/header-component.js';
 const test = QUnit.test;
 
 QUnit.module('header and footer');
@@ -13,28 +13,6 @@ test('makes header template', assert => {
         </section>`;
     assert.htmlEqual(result, expected);
 })
-function makeUserProfile(user) {
-    let link = null;
-    let linkText = null;
-    if(window.location.pathname === '/favorites.html') {
-        link = '/';
-        linkText = 'Back to Starship Inventory';
-    }
-    else {
-        link = '/favorites.html';
-        linkText = 'My Selected Starships';
-    }
-    const html = /*html*/`
-    <section id="profile">
-            <p>Name: ${user.displayName} </p>
-            <img src="${user.photoURL}">
-            <button>Sign Out</button>
-            <a href="favorites.html">link</a>
-        </section>`;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
 
 test('make user profile', assert => {
     const user = {
@@ -46,7 +24,7 @@ test('make user profile', assert => {
             <p>Name: Bob Smith </p>
             <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg">
             <button>Sign Out</button>
-            <a href="favorites.html">link</a>
+            <a href="/favorites.html">My Selected Starships</a>
         </section>`;
     const result = makeUserProfile(user);
 
