@@ -3,7 +3,7 @@ import { auth } from './firebase.js';
 let headerText = null;
 
 if(window.location.pathname === '/favorites.html') {
-    headerText = 'My Favorite Chuck Norris Jokes';
+    headerText = 'My Favorite Not Very Funny Chuck Norris Jokes';
 }
 else {
     headerText = 'Not Very Funny Chuck Norris Jokes';

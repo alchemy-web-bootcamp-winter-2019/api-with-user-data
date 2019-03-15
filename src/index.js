@@ -7,6 +7,9 @@ import loadPaging from './paging-component.js';
 import { pageArray } from './paging-component.js';
 import loadHeader from './header-component.js';
 
+const searchPrompt = document.getElementById('search-prompt');
+const pagingAndJokesDisplay = document.getElementById('paging-and-jokes');
+
 loadHeader();
 
 window.addEventListener('hashchange', loadQuery);
@@ -18,6 +21,15 @@ function loadQuery() {
     updateQueryInput(queryOptions.query);
 
     const url = makeUrl(queryOptions);
+
+    if(!url) {
+        searchPrompt.classList.remove('hidden');
+        pagingAndJokesDisplay.classList.add('hidden');
+    }
+    else {
+        searchPrompt.classList.add('hidden');
+        pagingAndJokesDisplay.classList.remove('hidden');
+    }
 
     fetch(url)
         .then(response => response.json())
