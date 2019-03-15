@@ -27,7 +27,7 @@ test('make user profile', assert => {
     const expected = /*html*/
     `<div id="profile">
         <img src="../assets/chuck-profile.png" id="avatar">
-        <span>Leslie Shea</span>
+        <span id="display-name">Leslie Shea</span>
         <button>Sign Out</button>
         <p><a href="/favorites.html">My Favorite Jokes</a></p>
     </div>`;
