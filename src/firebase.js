@@ -5,7 +5,7 @@ const config = {
     projectId: 'chuck-norris-jokes-8b27e'
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 const db = firebase.database();
