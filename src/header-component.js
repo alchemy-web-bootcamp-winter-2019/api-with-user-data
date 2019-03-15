@@ -13,8 +13,8 @@ export function makeHeader() {
     const html = /*html*/
     `<header>
         <div id="static-header">
-            <h1>${headerText}</h1>
             <img id="chuck-image" src="./assets/chuck.png">
+            <h1>${headerText}</h1>
         </div>
     </header>`;
 

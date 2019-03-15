@@ -9,8 +9,8 @@ test('make header', assert => {
     const expected = /*html*/
     `<header>
         <div id="static-header">
-            <h1>Not Very Funny Chuck Norris Jokes</h1>
             <img id="chuck-image" src="./assets/chuck.png">
+            <h1>Not Very Funny Chuck Norris Jokes</h1>
         </div>
     </header>`;
     
@@ -26,7 +26,7 @@ test('make user profile', assert => {
     const result = makeProfile(user);
     const expected = /*html*/
     `<div id="profile">
-        <img src="http://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg" id="avatar">
+        <img src="../assets/chuck-profile.png" id="avatar">
         <span>Leslie Shea</span>
         <button>Sign Out</button>
         <p><a href="/favorites.html">My Favorite Jokes</a></p>
