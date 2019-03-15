@@ -25,7 +25,7 @@ export function readQuery(query) {
     const queryOptions = {
         searchInput: searchParams.get('search'),
         page: page
-    }
+    };
 
     return queryOptions;
 }

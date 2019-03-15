@@ -1,6 +1,6 @@
 import { makeListTemplate } from '../src/starships/starship-components.js';
 const test = QUnit.test;
-QUnit.module('make starship list')
+QUnit.module('make starship list');
 
 test('make starship template', assert => {
     //arrange

@@ -18,7 +18,7 @@ const starshipListNode = document.getElementById('starship-list');
 
 export default function updateStarships(starships) {
     while(starshipListNode.firstChild) {
-       starshipListNode.firstChild.remove();
+        starshipListNode.firstChild.remove();
     }
     starships.forEach(starship => {
         const dom = makeListTemplate(starship);
@@ -61,6 +61,6 @@ export default function updateStarships(starships) {
                     }
                 });
             });
-       starshipListNode.appendChild(dom);
-   });
+        starshipListNode.appendChild(dom);
+     });
 }
