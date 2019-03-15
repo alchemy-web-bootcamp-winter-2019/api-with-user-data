@@ -1,17 +1,38 @@
-import { auth } from './firebase.js';
+import { auth, favoritesByUserRef } from './firebase.js';
+
+let headerText = null;
+
+if(window.location.pathname === '/favorites.html') {
+    headerText = 'My Favorite Chuck Norris Jokes';
+}
+else {
+    headerText = 'Not Very Funny Chuck Norris Jokes';
+}
 
 export function makeHeader() {
     const html = /*html*/ `
     <header>
     <div id="static-header">
     <img src="assets/chuck.png" id="chuck-img">
-    <h1>Not Very Funny Chuck Norris Jokes</h1>
+    <h1>${headerText}</h1>
     </div>
     </header>
     `;
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+let link = null;
+let linkText = null;
+
+if(window.location.pathname === '/favorites.html') {
+    link = '/';
+    linkText = 'Search';
+}
+else {
+    link = '/favorites.html';
+    linkText = 'My Favorite Jokes';
 }
 
 export function makeProfile(userInfo) {
@@ -22,6 +43,7 @@ export function makeProfile(userInfo) {
         <div id="user-info">
         <span>${userInfo.displayName}</span>
         <button>sign out</button>
+       <p><a href="${link}">${linkText}</a></p>
         </div>
     </div>
     `;

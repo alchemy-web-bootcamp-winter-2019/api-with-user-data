@@ -19,6 +19,12 @@ h1 {
     display: inline-flex;
 }
 
+#links {
+    display: inline-flex;
+    margin-left: 10px;
+
+}
+
 #avatar {
     width: 75px;
     border-radius: 50%;

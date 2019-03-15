@@ -22,6 +22,7 @@ test('profile template will match html', assert => {
         <div id="user-info">
         <span>${userInfo.displayName}</span>
         <button>sign out</button>
+        <p><a href="/favorites.html">My Favorite Jokes</a></p>
         </div>
     </div>
     `;
@@ -37,7 +38,7 @@ test('header template will match html', assert => {
     <div id="static-header">
     <img src="assets/chuck.png" id="chuck-img">
     <h1>Not Very Funny Chuck Norris Jokes</h1>
-    </div>
+   </div>
     </header>
     `;
     //act
