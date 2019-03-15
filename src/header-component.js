@@ -1,4 +1,4 @@
-import { auth, favoritesByUserRef } from './firebase.js';
+import { auth } from './firebase.js';
 
 let headerText = null;
 
