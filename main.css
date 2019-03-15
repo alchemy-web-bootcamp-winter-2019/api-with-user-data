@@ -41,3 +41,9 @@ ul {
 /* .hidden {
     display: none;
 } */
+
+#sign-in-prompt {
+    text-align: center;
+    font-family: 'Vidaloka', serif;
+    font-size: 1.3em;
+}
