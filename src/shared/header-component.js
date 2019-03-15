@@ -12,10 +12,10 @@ export function makeHeader() {
         subHeaderText = 'Financing Available, Zero Down';
     }
     const html = /*html*/
-    ` <section>
+    ` <header>
     <h1>${headerText}</h1>
     <h3>${subHeaderText}</h3>
-    </section>`;
+    </header>`;
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
@@ -32,10 +32,11 @@ export function makeUserProfile(user) {
         link = '/favorites.html';
         linkText = 'My Selected Starships';
     }
+    const profilePic = user.photoURL || '../assets/profile-pic.png';
     const html = /*html*/`
     <section id="profile">
             <p>Name: ${user.displayName} </p>
-            <img src="${user.photoURL}">
+            <img src="${profilePic}">
             <button>Sign Out</button>
             <a href="${link}">${linkText}</a>
         </section>`;
@@ -48,6 +49,7 @@ const headerContainer = document.getElementById('header-container');
 
 export default function loadHeader(options) {
     const dom = makeHeader();
+    const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
     if(options && options.skipAuth) {
         return;
@@ -55,11 +57,12 @@ export default function loadHeader(options) {
     auth.onAuthStateChanged(user => {
         if(user) {
             const userDom = makeUserProfile(user);
+          
             const signOutButton = userDom.querySelector('button');
             signOutButton.addEventListener('click', () => {
                 auth.signOut();
             });
-            headerContainer.appendChild(userDom);
+            header.appendChild(userDom);
         }
         else {
             window.location = '/auth.html';

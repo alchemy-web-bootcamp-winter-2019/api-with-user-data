@@ -7,7 +7,7 @@ const headerContainer = document.getElementById('header-container');
 loadHeader();
 
 auth.onAuthStateChanged(user => {
-    //const userId = user.uid;
+    const userId = user.uid;
     const userFavoritesRef = 
     favoritesByUserRef.child(user.uid);
 

@@ -7,10 +7,10 @@ QUnit.module('header and footer');
 test('makes header template', assert => {
     const result = makeHeader();
     const expected = /*html*/
-        ` <section>
+        ` <header>
         <h1>Sy Twomblee's Used Starship Sales</h1>
         <h3>Financing Available, Zero Down</h3>
-        </section>`;
+        </header>`;
     assert.htmlEqual(result, expected);
 })
 
