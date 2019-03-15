@@ -17,9 +17,15 @@ export function writePageToQuery(existingQuery, page){
 
 export function readQuery(query) {
     const searchParams = new URLSearchParams(query);
-   const queryOptions = {
-       searchInput: searchParams.get('search')
-   }
+    const pageString = searchParams.get('page');
+    let page = 1;
+    if(pageString) {
+        page = parseInt(pageString);
+    }
+    const queryOptions = {
+       searchInput: searchParams.get('search'),
+       page: page
+    }
 
    return queryOptions;
 }
