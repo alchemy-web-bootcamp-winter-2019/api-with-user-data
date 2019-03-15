@@ -61,3 +61,21 @@ ul {
 .hidden {
     display: none;
 }
+
+#auth-container {
+    text-align: center;
+}
+
+button {
+    font-family: 'Vidaloka', serif;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #7DD877;
+    color: #FEFFEA;
+    letter-spacing: .05em;
+}
+
+button:hover {
+    background-color: #69B563;
+}
