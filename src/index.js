@@ -3,8 +3,8 @@ import './search-component.js';
 import { updateQueryInput } from './search-component.js';
 import { readFromQuery } from './query-component.js';
 import makeUrl from './make-url.js';
-import { pageArray } from './paging-component.js';
-import loadPaging from './paging-component.js';
+//import { pageArray } from './paging-component.js';
+//import loadPaging from './paging-component.js';
 import loadHeader from './header-component.js';
 
 const searchPrompt = document.getElementById('search-prompt');
@@ -34,9 +34,9 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(jokes => {
-            loadPaging(queryOptions.page, jokes.total);
-            const pagedJokes = pageArray(jokes.result);
-            loadJokes(pagedJokes);
+            //loadPaging(queryOptions.page, jokes.total);
+            //const pagedJokes = pageArray(jokes.result);
+            loadJokes(jokes.result);
             
         })
         .catch(err => {
