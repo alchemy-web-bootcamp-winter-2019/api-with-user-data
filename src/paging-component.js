@@ -38,12 +38,13 @@ export default function loadPaging(totalCount, callback) {
         callback(pagingOptions);
     }
 
-    // function updatePageInUrl() {
-    //     const existingQuery = window.location.hash.slice(1);
-    //     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
-    //     window.location.hash = newQuery;
-    // }
 }
+
+// function updatePageInUrl() {
+//     const existingQuery = window.location.hash.slice(1);
+//     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
+//     window.location.hash = newQuery;
+// }
 
 export function pageArray(array, pagingOptions) {
     const page = pagingOptions.page;
