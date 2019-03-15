@@ -31,3 +31,27 @@ h1 {
     background-color: pink;
 }
 
+.profile-text {
+    font-family: 'Vidaloka', serif;
+    text-align: center;
+}
+
+.profile-text a {
+    color: #d82b87;
+    text-decoration: none;
+}
+
+.profile-text a:hover {
+    color: #7DD877;
+    text-decoration: underline;
+}
+
+button {
+    font-family: 'Vidaloka', serif;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #7DD877;
+    color: #FEFFEA;
+    letter-spacing: .05em;
+}

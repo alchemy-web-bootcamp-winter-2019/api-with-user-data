@@ -41,9 +41,9 @@ export function makeProfile(userInfo) {
     <div id="profile">
     <img src="${avatar}" id="avatar">
         <div id="user-info">
-        <span>${userInfo.displayName}</span>
+        <span class="profile-text">${userInfo.displayName}</span>
         <button>sign out</button>
-       <p><a href="${link}">${linkText}</a></p>
+        <p class="profile-text"><a href="${link}">${linkText}</a></p>
         </div>
     </div>
     `;

@@ -20,9 +20,9 @@ test('profile template will match html', assert => {
     <div id="profile">
     <img src="/assets/chuck-avatar.png" id="avatar">
         <div id="user-info">
-        <span>${userInfo.displayName}</span>
+        <span class="profile-text">${userInfo.displayName}</span>
         <button>sign out</button>
-        <p><a href="/favorites.html">My Favorite Jokes</a></p>
+        <p class="profile-text"><a href="/favorites.html">My Favorite Jokes</a></p>
         </div>
     </div>
     `;

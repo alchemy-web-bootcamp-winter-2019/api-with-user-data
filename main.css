@@ -18,7 +18,6 @@ ul {
 }
 
 .joke-card {
-    font-family: 'Courgette', cursive;
     font-size: 1.5em;
     background-color: #98C9A3;
     border: 2px #7DD877 solid;
@@ -31,6 +30,12 @@ ul {
     position: relative;
 }
 
+.joke-card p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: .07em;
+}
+
 .favorite-heart {
     position: absolute;
     top: 0;
@@ -38,10 +43,19 @@ ul {
     color: #aaa;
     cursor: pointer;
     margin-bottom: 6px;
+    font-style: normal;
+}
+
+.favorite-heart:hover {
+    color: #d82b87;
 }
 
 .favorite {
     color: #d82b87;
+}
+
+.favorite:hover {
+    color: #aaa;
 }
 
 .hidden {
