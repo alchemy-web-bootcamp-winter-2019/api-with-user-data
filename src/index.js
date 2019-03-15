@@ -3,6 +3,7 @@ import  updateStarships from './starships/starship-components.js';
 import { writeSearchToQuery, readQuery } from './starships/query-component.js';
 import './starships/search-component.js';
 import { updateSearchInput } from './starships/search-component.js';
+import { updatePagingInfo } from '../src/starships/paging-component.js';
 import { makeSearchUrl } from './make-search-url.js';
 import { auth } from './firebase.js';
 const starshipListNode = document.getElementById('starship-list');
@@ -24,6 +25,11 @@ function loadQuery() {
         .then(response => response.json())
         .then(starships => {
             updateStarships(starships.results);
+            console.log(starships);
+            // const pagingInfo = {
+            //     page: starships.page,
+            //     totalPages: starships.total
+            // }
         })
         .catch(err => {
             /* eslint-disable-next-line*/
