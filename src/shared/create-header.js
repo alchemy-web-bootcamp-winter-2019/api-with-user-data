@@ -3,7 +3,6 @@
 import { auth } from '../../firebase/firebase.js';
 
 export function createAuthHeaderComponent(user) {
-    console.log('passed in user', user);
     const template = document.createElement('template');
     const html = `
     <div class="profile">
@@ -28,7 +27,6 @@ export function createNoUserHeader() {
 }
 
 const headerContainer = document.getElementById('header-container');
-
 export default function createHeader(options) {
     const dom = createNoUserHeader();
     const header = dom.querySelector('header');
@@ -39,7 +37,7 @@ export default function createHeader(options) {
     }
 
     auth.onAuthStateChanged(user => {
-        if(user){ //has user!!
+        if(user){
             const userDom = createAuthHeaderComponent(user);
             const signOutButton = userDom.querySelector('button');
             signOutButton.addEventListener('click', ()=> {
@@ -48,7 +46,7 @@ export default function createHeader(options) {
             });
             header.appendChild(userDom);      
         }
-        else{
+        else {
             window.location = './auth.html' + window.location.hash;
         }
     });

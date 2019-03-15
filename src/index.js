@@ -22,19 +22,16 @@ function loadList() {
         .then(response => response.json())
         .then(body => {
             const listOfSites = getListOfSiteIds(body);
-            listOfSites.forEach(siteId => {
-                //relocate riverIfno         
+            listOfSites.forEach(siteId => {    
                 const riverInfo = generateRiverInfo(body, siteId);
                 renderRiverLi(riverInfo, listOfSites);
             });
         })
-        .catch(error => console.log(error));
+        .catch(error => alert(error));
 }
 
-//render river data on hash change
 
 window.addEventListener('hashchange', loadList);
-
 auth.onAuthStateChanged(() => {
     loadList();
     const userId = auth.currentUser.uid;
@@ -46,9 +43,8 @@ auth.onAuthStateChanged(() => {
         });
 });
 
-//clear results 
-const clearReultsButton = document.getElementById('clear-results');
 
+const clearReultsButton = document.getElementById('clear-results');
 clearReultsButton.addEventListener('click', ()=>{
     event.preventDefault();
     window.location.hash = '';

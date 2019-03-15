@@ -19,14 +19,13 @@ export default function loadFavorites(firebaseFavorites)
 
 
     while(favoritesNode.children.length > 0){
-        console.log('removing extra children');
+
         favoritesNode.firstChild.remove();
     }
 
     const favorites = Object.values(firebaseFavorites);
     favorites.forEach(favorite =>{
-       
-        console.log('favorite', favorite);
+ 
         const dom = createFavoriteLi(favorite);
         const buttonNode = dom.querySelector('.live-data-btn');
         buttonNode.addEventListener('click', ()=>{

@@ -12,19 +12,15 @@ function updateQuery(){
 }
 
 
-//global variables
-
 let waterParams = ['00060'];
 let filteredWaterParams;
 
 
-//filter params
 function filterWaterParams(){
     filteredWaterParams = waterParams.filter(param => param.length > 1);
 }
 
 
-//**** */new site id related actions****
 
 submitSiteIdNode.addEventListener('click', event => {
     event.preventDefault();
@@ -35,7 +31,6 @@ submitSiteIdNode.addEventListener('click', event => {
 });
 
 
-/////**** */check box related actions***
 
 
 heightNode.addEventListener('change', () => {
@@ -56,5 +51,5 @@ tempNode.addEventListener('change', () => {
     window.location.hash = newQuery;
 });
 
-console.log('heightNodeStatus', heightNode.checked);
+
 
