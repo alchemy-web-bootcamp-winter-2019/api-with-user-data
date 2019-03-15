@@ -21,7 +21,7 @@ export default function loadJokes(jokes) {
         const dom = makeJokesTemplate(joke);
         const favoriteHeart = dom.querySelector('.favorite-heart');
 
-        const userId = auth.currentUser.iud;
+        const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteJokesRef = userFavoritesRef.child(joke.id);
         userFavoriteJokesRef.once('value')
@@ -44,7 +44,7 @@ export default function loadJokes(jokes) {
                     isFavorite = false;
                     favoriteHeart.classList.remove('favorite');
                 }
-                
+
                 favoriteHeart.addEventListener('click', () => {
                     if(isFavorite) {
                         userFavoriteJokesRef.remove();
