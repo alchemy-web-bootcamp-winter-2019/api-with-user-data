@@ -1,4 +1,4 @@
-import makeHeader from '../src/shared/header-component.js';
+import { makeHeader } from '../src/shared/header-component.js';
 const test = QUnit.test;
 
 QUnit.module('header and footer');

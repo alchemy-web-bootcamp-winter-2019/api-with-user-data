@@ -6,7 +6,11 @@ import { updateSearchInput } from './starships/search-component.js';
 import { updatePagingInfo } from '../src/starships/paging-component.js';
 import { makeSearchUrl } from './make-search-url.js';
 import { auth } from './firebase.js';
+import loadHeader from './shared/header-component.js';
 const starshipListNode = document.getElementById('starship-list');
+const headerContainer = document.getElementById('header-container');
+
+loadHeader();
 
 let queryOptions = null;
 

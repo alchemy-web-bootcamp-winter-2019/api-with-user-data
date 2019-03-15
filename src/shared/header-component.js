@@ -1,4 +1,4 @@
-export default function makeHeader() {
+export function makeHeader() {
     let headerText = null;
     let subHeaderText = null;
     if(window.location.pathname === '/favorites.html') {
@@ -17,4 +17,11 @@ export default function makeHeader() {
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+const headerContainer = document.getElementById('header-container');
+
+export default function loadHeader() {
+    const dom = makeHeader();
+    headerContainer.appendChild(dom);
 }
