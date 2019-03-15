@@ -7,14 +7,15 @@ QUnit.module('CREATE-HEADER.TEST.JS');
 test('create un-authorized header', assert => {
 
     //arrange
+    const src = 'dog';
     const expected = /*html*/`
     <header>
-        <img>
+        <img src="dog">
         <h1>My River Info</h1>
     </header>
     `;
     //act
-    const actual = createNoUserHeader();
+    const actual = createNoUserHeader(src);
     //assert
     assert.htmlEqual(actual, expected);
 });
