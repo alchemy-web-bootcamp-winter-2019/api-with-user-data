@@ -1,6 +1,5 @@
-
-import  updateStarships from './starships/starship-components.js';
-import { writeSearchToQuery, readQuery } from './starships/query-component.js';
+import updateStarships from './starships/starship-components.js';
+import { readQuery } from './starships/query-component.js';
 import './starships/search-component.js';
 import { updateSearchInput } from './starships/search-component.js';
 import { updatePagingInfo } from '../src/starships/paging-component.js';
@@ -8,12 +7,7 @@ import { makeSearchUrl } from './make-search-url.js';
 import { auth } from './firebase.js';
 import loadHeader from './shared/header-component.js';
 
-const starshipListNode = document.getElementById('starship-list');
-const headerContainer = document.getElementById('header-container');
-
 loadHeader();
-
-let queryOptions = null;
 
 window.addEventListener('hashchange', loadQuery);
 
@@ -42,7 +36,7 @@ function loadQuery() {
             /* eslint-disable-next-line*/
             console.error('Fetch error:', err);
         });
-};
+}
 
    
 

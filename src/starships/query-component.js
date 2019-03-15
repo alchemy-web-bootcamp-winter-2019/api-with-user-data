@@ -4,7 +4,7 @@ export function writeSearchToQuery(existingQuery, searchTerm) {
     }
     const searchParams = new URLSearchParams(existingQuery);
     searchParams.set('search', searchTerm);
-    searchParams.set('page', 1)
+    searchParams.set('page', 1);
     return '?' + searchParams.toString();
 
 }
@@ -23,9 +23,9 @@ export function readQuery(query) {
         page = parseInt(pageString);
     }
     const queryOptions = {
-       searchInput: searchParams.get('search'),
-       page: page
+        searchInput: searchParams.get('search'),
+        page: page
     }
 
-   return queryOptions;
+    return queryOptions;
 }

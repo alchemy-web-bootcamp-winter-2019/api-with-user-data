@@ -12,7 +12,7 @@ test('makes header template', assert => {
         <h3>Financing Available, Zero Down</h3>
         </header>`;
     assert.htmlEqual(result, expected);
-})
+});
 
 test('make user profile', assert => {
     const user = {
@@ -30,4 +30,4 @@ test('make user profile', assert => {
 
     assert.htmlEqual(result, expected);
 
-})
+});

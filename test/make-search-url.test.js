@@ -20,7 +20,7 @@ test('includes search term and page in URL', assert => {
 
 test('search returns empty url if no search term', assert => {
       //arrange
-      const queryOptions = {
+    const queryOptions = {
         term: ''
     };
 

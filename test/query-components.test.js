@@ -23,7 +23,7 @@ test('write search to existing query, update search URL and reset page', assert 
     const result = writeSearchToQuery(existingQuery, searchTerm);
     //assert
     assert.equal(result, expected);
-})
+});
 
 test('add page to existing query', assert => {
     const existingQuery = '?search=tie&page=1';
@@ -31,7 +31,7 @@ test('add page to existing query', assert => {
     const result = writePageToQuery(existingQuery, page);
     const expected = '?search=tie&page=2';
     assert.equal(result, expected);
-})
+});
 
 test('reads query options', assert => {
     //arrange
@@ -41,9 +41,9 @@ test('reads query options', assert => {
     const expected = {
         searchInput: 'death',
         page: 3
-    }
+    };
     //assert
     assert.deepEqual(result, expected);
-})
+});
 
 

@@ -1,6 +1,5 @@
 import { auth, usersRef } from './firebase.js';
 import loadHeader from './shared/header-component.js';
-const headerContainer = document.getElementById('header-container');
 
 const options = { skipAuth: true };
 loadHeader(options);

@@ -12,7 +12,7 @@ export function makeHeader() {
         subHeaderText = 'Financing Available, Zero Down';
     }
     const html = /*html*/
-    ` <header>
+    `<header>
     <h1>${headerText}</h1>
     <h3>${subHeaderText}</h3>
     </header>`;
