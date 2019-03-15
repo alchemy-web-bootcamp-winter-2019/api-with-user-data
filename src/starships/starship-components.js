@@ -62,5 +62,5 @@ export default function updateStarships(starships) {
                 });
             });
         starshipListNode.appendChild(dom);
-     });
+    });
 }
