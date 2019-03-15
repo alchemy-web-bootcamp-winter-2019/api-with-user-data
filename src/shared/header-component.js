@@ -1,3 +1,5 @@
+import { auth } from '../firebase.js';
+
 export function makeHeader() {
     let headerText = null;
     let subHeaderText = null;
@@ -44,10 +46,23 @@ export function makeUserProfile(user) {
 
 const headerContainer = document.getElementById('header-container');
 
-export function loadProfile(user) {
-
-}
-export default function loadHeader() {
+export default function loadHeader(options) {
     const dom = makeHeader();
     headerContainer.appendChild(dom);
+    if(options && options.skipAuth) {
+        return;
+    }
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            const userDom = makeUserProfile(user);
+            const signOutButton = userDom.querySelector('button');
+            signOutButton.addEventListener('click', () => {
+                auth.signOut();
+            });
+            headerContainer.appendChild(userDom);
+        }
+        else {
+            window.location = '/auth.html';
+        }
+    });
 }
