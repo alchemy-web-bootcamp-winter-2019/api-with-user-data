@@ -30,10 +30,8 @@ function loadQuery() {
         .then(response => response.json())
         .then(starships => {
             updateStarships(starships.results);
-            console.log(starships);
             let totalPages = Math.ceil(starships.count / 10);
             let page = queryOptions.page;
-            console.log(totalPages);
             const pagingInfo = {
                 totalPages: totalPages,
                 page: page
