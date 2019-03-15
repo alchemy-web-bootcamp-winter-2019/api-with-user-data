@@ -19,7 +19,7 @@ ul {
     height: 220px;
     padding: 10px;
     margin: 5px;
-    font-family: 'Vidaloka', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     position: relative;
     overflow: scroll;
@@ -38,12 +38,21 @@ ul {
     color: #FF99FD;
 }
 
-/* .hidden {
+.hidden {
     display: none;
-} */
+}
 
 #sign-in-prompt {
     text-align: center;
     font-family: 'Vidaloka', serif;
     font-size: 1.3em;
+}
+
+#paging-section {
+    font-family: 'Raleway', sans-serif;
+    margin: 10px;
+}
+
+#search-prompt {
+    font-family: 'Raleway', sans-serif;
 }
