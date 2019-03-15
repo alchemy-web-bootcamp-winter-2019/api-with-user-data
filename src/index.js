@@ -12,12 +12,25 @@ loadHeader();
 window.addEventListener('hashchange', loadQuery);
 
 
+const searchPrompt = document.getElementById('search-prompt');
+const jokesSection = document.getElementById('jokes-section');
+
 function loadQuery() {
     const query = window.location.hash.slice(1);
     const queryOptions = readFromQuery(query);
     updateQueryInput(queryOptions.query);
     
     const url = makeUrl(queryOptions);
+
+    if(!url) {
+        searchPrompt.classList.remove('hidden');
+        jokesSection.classList.add('hidden');
+        return;
+    }
+    else {
+        searchPrompt.classList.add('hidden');
+        jokesSection.classList.remove('hidden');
+    }
     
     fetch(url)
         .then(response => response.json())
