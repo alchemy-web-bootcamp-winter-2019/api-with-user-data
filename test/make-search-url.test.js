@@ -3,13 +3,14 @@ const test = QUnit.test;
 QUnit.module('make URL');
 
 
-test('includes search term in URL', assert => {
+test('includes search term and page in URL', assert => {
     //arrange
     const queryOptions = {
-        searchInput: 'death'
+        searchInput: 'death',
+        page: 1
     };
 
-    const expected = 'https://swapi.co/api/starships/?search=death';
+    const expected = 'https://swapi.co/api/starships/?search=death&page=1';
     //act
     const result = makeSearchUrl(queryOptions);
 

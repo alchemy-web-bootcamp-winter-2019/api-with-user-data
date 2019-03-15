@@ -8,5 +8,6 @@ export function makeSearchUrl(queryOptions) {
     }
     const url = new URL(SEARCH_STARSHIP_URL);
     url.searchParams.set('search', searchInput);
+    url.searchParams.set('page', queryOptions.page);
     return url.toString();
 }
