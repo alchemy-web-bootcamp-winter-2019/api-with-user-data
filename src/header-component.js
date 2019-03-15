@@ -35,7 +35,7 @@ export function makeProfile(user) {
         link = '/favorites.html';
         linkText = 'My Favorite Jokes';
     }
-    const avatar = user.photoUrl || '../assets/chuck-profile.png';
+    const avatar = user.photoURL || '../assets/chuck-profile.png';
 
     const html = /*html*/
     `<div id="profile">
