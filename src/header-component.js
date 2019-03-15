@@ -15,7 +15,7 @@ export function makeHeader() {
 }
 
 export function makeProfile(userInfo) {
-    const avatar = userInfo.photoURL || '../assets/chuck-avatar.jpg';
+    const avatar = userInfo.photoURL || '/assets/chuck-avatar.png';
     const html = /*html*/ `
     <div id="profile">
     <img src="${avatar}" id="avatar">
