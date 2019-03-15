@@ -13,9 +13,8 @@ test('create li for fav. river', assert => {
     };
     const expected = /*html*/`
 <li>
+    <button class="live-data-btn">GET LIVE DATA</button>
     <span>DESCHUTES RIVER NEAR MADRAS, OR</span>
-    <button>GET LIVE DATA</button>
-    <button>REMOVE FROM FAVORITES</button>
  </li>`;
     //act
     const actual = createFavoriteLi(firebaseObject);

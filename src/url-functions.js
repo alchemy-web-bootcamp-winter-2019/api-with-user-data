@@ -70,7 +70,7 @@ export function addRemoveSiteFromQuery(option, siteId, query) {
         return newQuery;
     }
     else if(option === 'subtract') {
-        const currentSites = currentUrlParams.siteId;
+        const currentSites = currentUrlParams.sites;
         const includes = currentSites.includes(siteId);
         if(includes) {
             const slicedSites = sliceSitesFromString(currentSites);
