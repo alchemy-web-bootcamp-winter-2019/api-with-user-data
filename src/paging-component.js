@@ -1,5 +1,3 @@
-// import { writePageToQuery } from './query-component.js';
-
 const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
 const currentPage = document.getElementById('current-page');
@@ -17,13 +15,11 @@ export default function loadPaging(totalCount, callback) {
     nextButton.addEventListener('click', () => {
         currentPageNumber++;
         updatePaging();
-        // updatePageInUrl();
     });
 
     previousButton.addEventListener('click', () => {
         currentPageNumber--;
         updatePaging();
-        // updatePageInUrl();
     });
 
     function updatePaging() {
@@ -39,13 +35,6 @@ export default function loadPaging(totalCount, callback) {
     }
 
 }
-
-// function updatePageInUrl() {
-//     const existingQuery = window.location.hash.slice(1);
-//     const newQuery = writePageToQuery(existingQuery, currentPageNumber);
-//     window.location.hash = newQuery;
-// }
-
 export function pageArray(array, pagingOptions) {
     const page = pagingOptions.page;
     const perPage = pagingOptions.perPage;
