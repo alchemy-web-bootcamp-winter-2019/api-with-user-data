@@ -1,0 +1,58 @@
+body {
+    background-color: rgba(237, 238, 201, 0.308);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.joke-card {
+    background-color: #98C983;
+    border: 2px solid #7DD877;
+    border-radius: 3px;
+    width: 300px;
+    height: 220px;
+    padding: 10px;
+    margin: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    overflow: scroll;
+}
+
+.favorite-heart {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 4px;
+    color: #aaa;
+    user-select: none;
+}
+
+.favorite {
+    color: #FF99FD;
+}
+
+.hidden {
+    display: none;
+}
+
+#sign-in-prompt {
+    text-align: center;
+    font-family: 'Vidaloka', serif;
+    font-size: 1.3em;
+}
+
+#paging-section {
+    font-family: 'Raleway', sans-serif;
+    margin: 10px;
+}
+
+#search-prompt {
+    font-family: 'Raleway', sans-serif;
+}

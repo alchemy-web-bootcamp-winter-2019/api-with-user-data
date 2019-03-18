@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./header.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Vidaloka" rel="stylesheet">
+    <title>Chuck Norris Jokes</title>
+</head>
+<body>
+    <div id="header-container">
+
+    </div>
+    <main>
+        <form id="search-form">
+            <input
+                type="text"
+                name="jokes-search"
+                id="jokes-search"
+                autocomplete="off">
+            <button>Search</button>
+        </form>
+
+        <p id="search-prompt">Search for a joke by typing any word in the search bar!</p>
+
+        <div id="jokes-section" class="hidden">
+            <section id="paging-section">
+                <button id="previous-button">&lt;</button>
+                Page <span id="current-page"></span> of <span id="total-pages"></span>
+                <button id="next-button">&gt;</button>
+                <p>Click on a heart to save a joke in your favorites.</p>
+            </section>
+
+            <ul id="jokes-list">
+
+            </ul>
+        </div>
+    </main>
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
