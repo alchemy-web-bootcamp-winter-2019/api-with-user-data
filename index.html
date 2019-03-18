@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+
+    <link rel="stylesheet" href="./src/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USGS RIVER INFO</title>
+</head>
+
+<body>
+    <div id='header-container'></div>
+    <div>
+        <p>
+           get river data by site id.  For example Dechuttes id is 14092500
+        </p>
+    </div>
+    <div id="search-params">
+        <form class="top-form">
+            <h2>Get Live River Data By Site Id</h2>
+            <input id="site-id" placeholder="USGS SITE ID">
+            <button id="submit-site-id">Submit New Site</button>
+        </form>
+        <form class="top-form">
+            <h2>Choose Additional Parameters To Display</h2>
+            <input id="checkbox-height" type="checkbox" autocomplete="off">River Height (ft)</checkbox>
+            <input id="checkbox-temp" type="checkbox" autocomplete="off">WaterTemp (C)</checkbox>
+        </form>
+    </div>
+    <div id="fave-rivers">
+        <h2>Your Favorite Rivers</h2>
+        <ul id="favorites-ul">
+        </ul>
+    </div>
+    <div id="live-data">
+        <h2>Live Data</h2>
+        <button id="clear-results">CLEAR RESULTS</button>
+        <ul id="river-table">
+            </table>
+    </div>
+
+    <script type="module" src="src/index.js"></script>
+
+
+</body>
+
+</html>
