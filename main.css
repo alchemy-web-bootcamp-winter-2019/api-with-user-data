@@ -1,0 +1,35 @@
+ul {
+    border: 1px solid black;
+    list-style-type: none;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    position: relative;
+    border: 1px solid red;
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+* {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(3, 184, 3);
+    background-color: black;
+}
+
+.favorite-symbol {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 15px;
+    user-select: none;
+    font-size: 40px;
+} 
+
+.favorite {
+    color: red;
+}
+
