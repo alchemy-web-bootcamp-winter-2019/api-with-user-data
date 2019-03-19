@@ -34,8 +34,6 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(jokes => {
-            //loadPaging(queryOptions.page, jokes.total);
-            //const pagedJokes = pageArray(jokes.result);
             loadJokes(jokes.result);
             
         })
