@@ -1,0 +1,81 @@
+body {
+    background-color: #EDEEC9;
+    font-family: 'Vidaloka', serif;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: .2em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.joke-card {
+    font-size: 1.5em;
+    background-color: #98C9A3;
+    border: 2px #7DD877 solid;
+    border-radius: 3px;
+    width: 250px;
+    height: 250px;
+    overflow: scroll;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.joke-card p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: .07em;
+}
+
+.favorite-heart {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    color: #aaa;
+    cursor: pointer;
+    margin-bottom: 6px;
+    font-style: normal;
+}
+
+.favorite-heart:hover {
+    color: #d82b87;
+}
+
+.favorite {
+    color: #d82b87;
+}
+
+.favorite:hover {
+    color: #aaa;
+}
+
+.hidden {
+    display: none;
+}
+
+#auth-container {
+    text-align: center;
+}
+
+button {
+    font-family: 'Vidaloka', serif;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #7DD877;
+    color: #FEFFEA;
+    letter-spacing: .05em;
+}
+
+button:hover {
+    background-color: #69B563;
+}

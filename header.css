@@ -1,0 +1,48 @@
+#chuck-img {
+    width: 100px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+h1 {
+    font-family: 'Vidaloka', serif;
+    text-align: center;
+    font-size: 1.75em;
+    letter-spacing: .2em;
+    display: inline-flex;
+}
+
+#links {
+    display: inline-flex;
+    margin-left: 10px;
+
+}
+
+#avatar {
+    width: 75px;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+.profile-text {
+    font-family: 'Vidaloka', serif;
+    text-align: center;
+}
+
+.profile-text a {
+    color: #d82b87;
+    text-decoration: none;
+}
+
+.profile-text a:hover {
+    color: #7DD877;
+    text-decoration: underline;
+}
+
